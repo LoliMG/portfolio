@@ -1,0 +1,147 @@
+/* --- NUEVA GALERÍA PREMIUM (LIGHTBOX) --- */
+.gallery-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: rgba(5, 5, 8, 0.98);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    user-select: none;
+
+    .gallery-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        .gallery-image {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-footer {
+            margin-top: 20px;
+            text-align: center;
+
+            .gallery-counter {
+                color: white;
+                font-size: 0.9rem;
+                opacity: 0.5;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .gallery-dots {
+                display: flex;
+                gap: 8px;
+                justify-content: center;
+
+                .gallery-dot {
+                    width: 6px;
+                    height: 6px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &.active {
+                        background: var(--accent-color);
+                        transform: scale(1.4);
+                        box-shadow: 0 0 10px var(--accent-glow);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Botones de Navegación */
+    .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2.5rem;
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        opacity: 0.6;
+        z-index: 10001;
+
+        &:hover {
+            opacity: 1;
+            color: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        &.prev { left: 40px; }
+        &.next { right: 40px; }
+    }
+
+    /* Botón de Cerrar */
+    .gallery-close {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.3s;
+        z-index: 10002;
+
+        &:hover {
+            opacity: 1;
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* Responsivo para Móvil */
+    @media (max-width: 768px) {
+        .gallery-nav {
+            font-size: 1.8rem;
+            padding: 10px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &.prev { left: 10px; }
+            &.next { right: 10px; }
+        }
+
+        .gallery-close {
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+        }
+
+        .gallery-content {
+            max-width: 98vw;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './GalleryModal.css';
 
 const GalleryModal = ({ isOpen, closeModal, slides }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
