@@ -32,6 +32,11 @@ const Projects = () => {
                 <div className="projects-grid">
                     {projects.map((proj, i) => (
                         <GlassCard key={i} className="project-card" variant="zoom">
+                            {proj.cover && (
+                                <div className="project-image">
+                                    <img src={proj.cover} alt={proj.title} />
+                                </div>
+                            )}
                             <div className="project-info">
                                 <h3>{proj.title}</h3>
                                 <p>{proj.desc}</p>

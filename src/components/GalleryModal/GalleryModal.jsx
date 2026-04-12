@@ -19,7 +19,7 @@ const GalleryModal = ({ isOpen, closeModal, slides }) => {
     };
 
     return (
-        <div className="modal" style={{ display: 'block' }} onClick={handleBackdropClick}>
+        <div className="modal" style={{ display: 'flex' }} onClick={handleBackdropClick}>
             <span className="close-modal" onClick={closeModal}>&times;</span>
             <div className="modal-content">
                 <div className="carousel-container">
