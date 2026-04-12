@@ -7,6 +7,14 @@ import './Home.css';
 const Home = () => {
     const { t } = useLanguage();
 
+    const scrollToAbout = (e) => {
+        e.preventDefault();
+        const element = document.getElementById('about-me');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="page active home-page">
             {/* Hero Section */}
@@ -25,7 +33,7 @@ const Home = () => {
                     </div>
 
                     <div className="scroll-down">
-                        <a href="#about-me">
+                        <a href="#about-me" onClick={scrollToAbout}>
                             <span>{t.scroll_about}</span>
                             <i className="fas fa-chevron-down"></i>
                         </a>
