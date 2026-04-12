@@ -8,7 +8,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 0; /* Unset padding for header image */
+        padding: 0;
         overflow: hidden;
 
         .project-image {
@@ -32,7 +32,7 @@
         .project-info {
             display: flex;
             flex-direction: column;
-            padding: 1.5rem; /* Re-add padding here */
+            padding: 1.5rem;
             height: 100%;
 
             h3 {
@@ -63,7 +63,6 @@
                 align-content: flex-start;
 
                 span {
-                    /* Fondo dinámico para que resalten en ambos temas */
                     background: var(--accent-glow);
                     padding: 6px 14px;
                     border-radius: 8px;
@@ -93,140 +92,151 @@
     }
 }
 
-/* Modal del Carrusel */
-.modal {
+/* --- NUEVA GALERÍA PREMIUM (LIGHTBOX) --- */
+.gallery-overlay {
     position: fixed;
-    z-index: 2000;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    height: 100dvh; /* Dynamic viewport height for mobile */
-    background-color: var(--modal-bg);
-    backdrop-filter: blur(15px);
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: rgba(5, 5, 8, 0.98); /* Fondo casi negro premium */
+    z-index: 10000; /* Siempre por encima */
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: modalFadeIn 0.4s ease;
+    animation: fadeIn 0.3s ease;
+    user-select: none;
+}
 
-    .modal-content {
-        position: relative;
-        width: 95%;
-        max-width: 1100px;
-        max-height: 95vh;
-        margin: auto; /* Force centering in all directions */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation: modalZoom 0.4s ease;
+.gallery-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .carousel-container {
-            position: relative;
-            background: #000;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+.gallery-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-            .carousel-img {
-                width: 100%;
-                max-height: 80vh;
-                object-fit: contain;
-                display: block;
-            }
+/* Botones de Navegación */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0.6;
+    z-index: 10001;
 
-            .carousel-prev, .carousel-next {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background: rgba(255, 255, 255, 0.1);
-                color: white;
-                border: none;
-                padding: 20px;
-                cursor: pointer;
-                font-size: 24px;
-                transition: 0.3s;
-                backdrop-filter: blur(5px);
-
-                &:hover {
-                    background: var(--accent-color);
-                    color: var(--bg-color);
-                }
-            }
-
-            .carousel-next { right: 0; }
-            .carousel-prev { left: 0; }
-        }
-
-        .carousel-dots {
-            text-align: center;
-            margin-top: 25px;
-
-            .dot {
-                display: inline-block;
-                width: 12px;
-                height: 12px;
-                margin: 0 6px;
-                background: rgba(255, 255, 255, 0.2);
-                border-radius: 50%;
-                cursor: pointer;
-                transition: 0.3s;
-
-                &.active {
-                    background: var(--accent-color);
-                    transform: scale(1.3);
-                }
-            }
-        }
+    &:hover {
+        opacity: 1;
+        color: var(--accent-color);
+        transform: translateY(-50%) scale(1.1);
     }
 
-    .close-modal {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        color: var(--text-primary);
-        font-size: 35px;
-        z-index: 2010;
-        cursor: pointer;
-        transition: 0.3s;
-        background: var(--bg-color);
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    &.prev { left: 40px; }
+    &.next { right: 40px; }
+}
 
-        &:hover {
-            color: var(--accent-color);
-            transform: rotate(90deg);
-        }
-    }
+/* Botón de Cerrar */
+.gallery-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+    z-index: 10002;
 
-    @media (max-width: 768px) {
-        .close-modal {
-            top: 15px;
-            right: 15px;
-            font-size: 30px;
-        }
-
-        .modal-content {
-            width: 98%;
-
-            .carousel-container {
-                .carousel-img {
-                    max-height: 70vh;
-                }
-
-                .carousel-prev, .carousel-next {
-                    padding: 12px;
-                    font-size: 18px;
-                }
-            }
-        }
+    &:hover {
+        opacity: 1;
+        color: var(--accent-color);
+        transform: rotate(90deg);
     }
 }
 
-@keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes modalZoom { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+/* Footer de la Galería */
+.gallery-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.gallery-counter {
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.gallery-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.gallery-dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.active {
+        background: var(--accent-color);
+        transform: scale(1.4);
+        box-shadow: 0 0 10px var(--accent-glow);
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Responsivo para Móvil */
+@media (max-width: 768px) {
+    .gallery-nav {
+        font-size: 1.8rem;
+        padding: 10px;
+        background: rgba(0,0,0,0.3);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.prev { left: 10px; }
+        &.next { right: 10px; }
+    }
+
+    .gallery-close {
+        top: 20px;
+        right: 20px;
+        font-size: 1.8rem;
+    }
+
+    .gallery-content {
+        max-width: 98vw;
+    }
+}
