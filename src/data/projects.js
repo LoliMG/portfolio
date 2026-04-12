@@ -7,7 +7,7 @@ export const getProjectsData = (t, openModal) => [
     {
         title: 'GoodHabits',
         desc: t.proj_data_1,
-        tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
+        tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
         cover: '/assets/GoodHabit/gh1.png',
         links: [
             { type: 'app', url: 'https://good-habit.vercel.app/' },
@@ -33,7 +33,7 @@ export const getProjectsData = (t, openModal) => [
     {
         title: 'CircularScore',
         desc: t.proj_data_2,
-        tags: ['Node.js', 'React', 'Fullstack'],
+        tags: ['React', 'Bootstrap', 'CSS3', 'Node.js', 'Express', 'MySQL', 'Vite'],
         cover: '/assets/CircularScore/cs1.png',
         links: [
             {
@@ -57,7 +57,7 @@ export const getProjectsData = (t, openModal) => [
     {
         title: 'BookFly',
         desc: t.proj_data_3,
-        tags: ['Node.js', 'React', 'MySQL', 'Bootstrap', 'CSS3'],
+        tags: ['React', 'Vite', 'Bootstrap', 'CSS3', 'Node.js', 'MySQL'],
         cover: '/assets/BookFly/bf1.png',
         links: [
             {
@@ -78,5 +78,15 @@ export const getProjectsData = (t, openModal) => [
             '/assets/BookFly/bf3.png',
             '/assets/BookFly/bf4.png'
         ]
+    },
+    {
+        title: 'Portfolio',
+        desc: t.proj_data_4,
+        tags: ['React', 'JavaScript', 'CSS3', 'Vite'],
+        cover: '/assets/hero.png',
+        links: [
+            { type: 'github', url: 'https://github.com/LoliMG/portfolio' }
+        ],
+        slides: []
     }
 ];
