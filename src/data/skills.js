@@ -46,5 +46,13 @@ export const getSkillsData = (t) => [
             { name: 'SCRUM', icon: 'fa-tasks', fab: false },
             { name: 'TRELLO', icon: 'fa-tasks', fab: false },
         ]
+    },
+    {
+        title: t.skill_cat_languages,
+        icon: 'fa-language',
+        skills: [
+            { name: `${t.lang_es}: ${t.level_native}`, icon: 'fa-globe-europe', fab: false },
+            { name: `${t.lang_en}: ${t.level_fluent}`, icon: 'fa-globe-americas', fab: false },
+        ]
     }
 ];
