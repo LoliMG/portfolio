@@ -9,20 +9,17 @@ import './Projects.css';
 const Projects = () => {
     const { t } = useLanguage();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalSlides, setModalSlides] = useState([]);
 
-    const slides = [
-        '/assets/circular1.png',
-        '/assets/circular2.png',
-        '/assets/circular3.png'
-    ];
-
-    const openModal = () => {
+    const openModal = (projectSlides) => {
+        setModalSlides(projectSlides);
         setIsModalOpen(true);
         document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
+        setModalSlides([]);
         document.body.style.overflow = 'auto';
     };
 
@@ -61,7 +58,7 @@ const Projects = () => {
             <GalleryModal 
                 isOpen={isModalOpen} 
                 closeModal={closeModal} 
-                slides={slides} 
+                slides={modalSlides} 
             />
         </div>
     );

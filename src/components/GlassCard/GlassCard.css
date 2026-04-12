@@ -11,7 +11,7 @@
     z-index: 1;
     display: block;
     width: 100%;
-    box-shadow: var(--card-shadow); /* Aplicamos la sombra variable por tema */
+    box-shadow: var(--card-shadow);
 }
 
 /* Efectos de Hover Sin Sombras Exteriores (Para evitar manchas en vecinas) */
@@ -19,7 +19,6 @@
     z-index: 100;
     border-color: var(--accent-color);
     background: var(--glass-bg);
-    /* En hover aumentamos un poco la opacidad del fondo y el brillo interno */
     box-shadow: var(--card-shadow), inset 0 0 20px var(--accent-glow);
 }
 
@@ -39,10 +38,15 @@
 .variant-small {
     padding: 1.2rem 1.5rem;
     border-radius: 15px;
+    /* Para el modo small, eliminamos la sombra exterior para evitar solapamientos en listas densas */
+    box-shadow: none; 
+    border-color: var(--glass-border);
 }
 
 .variant-small:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra muy ligera solo al elevarse */
+    z-index: 10;
 }
 
 /* Ajustes de texto para variante small */

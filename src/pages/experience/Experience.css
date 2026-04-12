@@ -73,7 +73,7 @@
         display: flex;
         align-items: center;
         gap: 25px;
-        margin-bottom: 20px;
+        margin-bottom: 30px; /* Aumentado de 20px a 30px */
 
         .edu-icon {
             width: 55px;

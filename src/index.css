@@ -10,22 +10,24 @@
     --transition-speed: 0.4s;
     --nav-bg: rgba(5, 5, 8, 0.85);
     --modal-bg: rgba(5, 5, 8, 0.98);
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    /* Sombras más cortas y precisas para evitar colisiones laterales */
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 :root[data-theme='light'] {
-    --bg-color: #f0faff; /* Tono azulado muy claro (inspirado en D4F6FF) */
-    --accent-color: #0097a7; /* Aguamarina elegante y profesional */
+    --bg-color: #f0faff; 
+    --accent-color: #0097a7; 
     --accent-glow: rgba(0, 151, 167, 0.1);
-    --text-primary: #0a2e36; /* Azul petróleo oscuro para el texto */
+    --text-primary: #0a2e36; 
     --text-secondary: #4a6a70;
     --glass-bg: rgba(255, 255, 255, 0.92);
-    --glass-border: rgba(198, 231, 255, 0.5); /* Usando el C6E7FF para los bordes */
+    --glass-border: rgba(198, 231, 255, 0.5); 
     --glass-blur: blur(10px);
     --transition-speed: 0.4s;
     --nav-bg: rgba(212, 246, 255, 0.85);
     --modal-bg: rgba(255, 255, 255, 0.98);
-    --card-shadow: 0 10px 40px rgba(0, 151, 167, 0.08);
+    /* Ajuste de sombra en modo día para mayor limpieza lateral */
+    --card-shadow: 0 4px 25px rgba(0, 151, 167, 0.06);
 }
 
 * {
