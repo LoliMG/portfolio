@@ -1,0 +1,50 @@
+/* Reset y Base de la Card */
+.glass-card {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2.2rem;
+    transition: all 0.4s ease;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    box-shadow: var(--card-shadow); /* Aplicamos la sombra variable por tema */
+}
+
+/* Efectos de Hover Sin Sombras Exteriores (Para evitar manchas en vecinas) */
+.glass-card:hover {
+    z-index: 100;
+    border-color: var(--accent-color);
+    background: var(--glass-bg);
+    /* En hover aumentamos un poco la opacidad del fondo y el brillo interno */
+    box-shadow: var(--card-shadow), inset 0 0 20px var(--accent-glow);
+}
+
+/* Variantes de Animación */
+
+/* Proyectos y Skills: Zoom Suave */
+.variant-zoom:hover {
+    transform: scale(1.03);
+}
+
+/* Experiencia: Desplazamiento lateral */
+.variant-slide:hover {
+    transform: translateX(12px);
+}
+
+/* Variante: Small (Formación/Educación) */
+.variant-small {
+    padding: 1.2rem 1.5rem;
+    border-radius: 15px;
+}
+
+.variant-small:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajustes de texto para variante small */
+.variant-small h3 { font-size: 1.1rem !important; }
+.variant-small p { font-size: 0.9rem !important; }

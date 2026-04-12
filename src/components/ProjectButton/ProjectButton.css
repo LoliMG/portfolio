@@ -1,0 +1,71 @@
+.btn-project {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition-speed);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* App & Gallery Style: Dinámico por Tema */
+.btn-primary-glass {
+    background: var(--accent-glow); /* Usamos el glow del tema activo */
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+
+    &:hover {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        box-shadow: 0 0 20px var(--accent-glow);
+        transform: translateY(-2px);
+    }
+}
+
+/* GitHub Style: Resaltado Blanco en Modo Noche */
+.btn-github {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+
+    &:hover {
+        background: #24292e; 
+        color: #fff;
+        border-color: #fff;
+        transform: translateY(-2px);
+    }
+}
+
+/* Ajustes específicos de tema para GitHub */
+[data-theme='dark'] .btn-github {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #f0f0f0;
+    background: rgba(255, 255, 255, 0.08);
+
+    &:hover {
+        background: white;
+        color: #000;
+        border-color: white;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+}
+
+[data-theme='light'] .btn-github {
+    /* En modo día, el botón de GitHub hereda el color de acento para mayor cohesión */
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+        background: var(--accent-color);
+        color: white;
+    }
+}

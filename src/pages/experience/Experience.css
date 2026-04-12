@@ -1,0 +1,113 @@
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background: var(--glass-border);
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        margin-left: -1px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+        position: relative;
+        width: 100%;
+        margin-bottom: 45px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--accent-color);
+            border: 3px solid var(--bg-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 2;
+            left: 22px;
+        }
+
+        .timeline-content {
+            h3 {
+                margin: 0 0 10px 0;
+                color: var(--accent-color);
+                font-size: 1.35rem;
+            }
+
+            h4 {
+                margin-bottom: 6px;
+                font-weight: 600;
+                color: var(--text-primary);
+                font-size: 1.1rem;
+            }
+
+            span {
+                font-size: 0.85rem;
+                color: var(--text-secondary);
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 0.95rem;
+                color: var(--text-secondary);
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+.education-list {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .education-card {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 20px;
+
+        .edu-icon {
+            width: 55px;
+            height: 55px;
+            /* Usamos variables del tema para que coincida con los botones de proyectos */
+            background: var(--accent-glow);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            transition: var(--transition-speed);
+        }
+
+        &:hover .edu-icon {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .edu-info {
+            h3 {
+                font-size: 1.15rem;
+                margin-bottom: 4px;
+                color: var(--text-primary);
+            }
+
+            p {
+                color: var(--text-secondary);
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
