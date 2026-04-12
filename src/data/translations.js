@@ -7,6 +7,7 @@ export const translations = {
     es: {
         nav_home: "Inicio",
         nav_exp: "Experiencia",
+        nav_edu: "Formación",
         nav_skills: "Habilidades",
         nav_projects: "Proyectos",
         hero_hi: "Hola, soy ",
@@ -56,6 +57,7 @@ export const translations = {
     en: {
         nav_home: "Home",
         nav_exp: "Experience",
+        nav_edu: "Education",
         nav_skills: "Skills",
         nav_projects: "Projects",
         hero_hi: "Hi, I'm ",

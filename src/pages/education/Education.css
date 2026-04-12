@@ -1,0 +1,47 @@
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.education-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 1.5rem !important;
+
+    .edu-icon {
+        width: 55px;
+        height: 55px;
+        background: var(--accent-glow);
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        flex-shrink: 0;
+        transition: var(--transition-speed);
+    }
+
+    &:hover .edu-icon {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .edu-info {
+        h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+    }
+}
