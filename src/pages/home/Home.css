@@ -1,6 +1,7 @@
 /* Home Page Overrides */
 .home-page {
-    padding-top: 0 !important; /* Eliminamos el padding global para centrar el Hero en toda la pantalla */
+    padding-top: 0 !important;
+    /* Eliminamos el padding global para centrar el Hero en toda la pantalla */
 }
 
 /* Hero Section */
@@ -12,22 +13,20 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    
+
     /* Fondo con movimiento de color */
-    background: linear-gradient(
-        -45deg, 
-        var(--bg-color), 
-        rgba(0, 210, 255, 0.1), 
-        var(--bg-color), 
-        rgba(0, 151, 167, 0.15)
-    );
+    background: linear-gradient(-45deg,
+            var(--bg-color),
+            rgba(0, 210, 255, 0.1),
+            var(--bg-color),
+            rgba(0, 151, 167, 0.15));
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
 
     .hero-content {
         padding-top: 80px;
         z-index: 2;
-        
+
         h2 {
             font-size: 1.5rem;
             color: var(--text-secondary);
@@ -109,19 +108,24 @@ h1 .cascade-char {
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: 
+    animation:
         cascadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards,
         gradientMove 3s linear infinite,
         titleFloat 3s ease-in-out infinite alternate;
-    animation-delay: 
+    animation-delay:
         calc(var(--char-index) * 0.02s),
         0s,
         calc(1.5s + var(--char-index) * 0.05s);
 }
 
 @keyframes titleFloat {
-    from { transform: translateY(0); }
-    to { transform: translateY(-5px); }
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
 }
 
 @keyframes cascadeIn {
@@ -130,6 +134,7 @@ h1 .cascade-char {
         transform: translateY(10px);
         filter: blur(3px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -138,9 +143,17 @@ h1 .cascade-char {
 }
 
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .fade-in {
@@ -154,24 +167,21 @@ h1 .cascade-char {
     width: 100%;
     max-width: 600px;
     margin: 2rem auto;
-    padding: 1.5rem 0; /* Espacio para el hover scale */
+    padding: 1.5rem 0;
+    /* Espacio para el hover scale */
     overflow: hidden;
     position: relative;
     /* Gradiente para desvanecer los bordes */
-    mask-image: linear-gradient(
-        to right, 
-        transparent, 
-        black 15%, 
-        black 85%, 
-        transparent
-    );
-    -webkit-mask-image: linear-gradient(
-        to right, 
-        transparent, 
-        black 15%, 
-        black 85%, 
-        transparent
-    );
+    mask-image: linear-gradient(to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent,
+            black 15%,
+            black 85%,
+            transparent);
 }
 
 .tech-track {
@@ -183,7 +193,8 @@ h1 .cascade-char {
 
 .tech-item {
     flex: 0 0 auto;
-    width: 75px; /* Más pegados */
+    width: 75px;
+    /* Más pegados */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,7 +220,7 @@ h1 .cascade-char {
 
     &:hover {
         transform: scale(1.1);
-        
+
         i {
             transform: translateY(-5px);
         }
@@ -231,25 +242,33 @@ h1 .cascade-char {
     i {
         filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
     }
-    
+
     &:hover .tech-name {
         color: var(--accent-color);
     }
 }
 
 @keyframes scrollTech {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 1.5rem)); } /* -50% because we duplicated the icons, minus half the gap */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 1.5rem));
+    }
+
+    /* -50% because we duplicated the icons, minus half the gap */
 }
 
 @keyframes fadeInHome {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -294,12 +313,19 @@ h1 .cascade-char {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-10px);
     }
+
     60% {
         transform: translateY(-5px);
     }
@@ -313,9 +339,10 @@ h1 .cascade-char {
 
     @media (max-width: 968px) {
         grid-template-columns: 1fr;
-        
+
         .about-text {
-            padding: 0 1.5rem; /* Padding lateral solicitado */
+            padding: 0 1.5rem;
+            /* Padding lateral solicitado */
         }
     }
 
