@@ -76,6 +76,7 @@
     align-items: center;
     gap: 8px;
     transition: var(--transition-speed);
+    justify-content: center;
 
     i {
         font-size: 0.9rem;
@@ -122,11 +123,19 @@
         background: var(--nav-bg);
         backdrop-filter: blur(20px);
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 70%;
-        padding-top: 100px;
+        padding: 0;
         transform: translateX(100%);
         transition: transform 0.5s ease;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+
+        li {
+            width: 100%;
+            text-align: center;
+            margin: 15px 0;
+        }
     }
 
     .nav-active {
@@ -140,14 +149,33 @@
 
     .nav-actions {
         flex-direction: column;
+        align-items: center;
         margin-left: 0;
-        margin-top: 20px;
+        margin-top: 30px;
         width: 100%;
         padding: 0 40px;
+        gap: 20px;
     }
 
     .theme-toggle, .lang-toggle {
-        width: 100%;
+        width: 180px !important;
+        height: 48px !important;
+        padding: 0 !important; /* Eliminamos paddings que puedan desviar el contenido */
+        justify-content: center !important;
+        align-items: center !important;
+        font-size: 0.95rem;
+
+        /* Aseguramos que el contenido interno (icon + span) esté agrupado y centrado */
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    .lang-toggle span {
+        margin: 0; /* Por si acaso hay margenes residuales */
+    }
+
+    .theme-toggle i {
+        font-size: 1.25rem;
     }
 }
 

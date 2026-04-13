@@ -4,11 +4,18 @@ import './GalleryModal.css';
 const GalleryModal = ({ isOpen, closeModal, slides }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // Reset current slide when modal opens with new slides
+    // Reset current slide and lock scroll when modal opens
     useEffect(() => {
         if (isOpen) {
             setCurrentSlide(0);
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
         }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
     }, [isOpen, slides]);
 
     if (!isOpen) return null;

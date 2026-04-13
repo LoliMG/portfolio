@@ -40,6 +40,11 @@
             h1 {
                 font-size: 3rem;
             }
+
+            p {
+                padding: 0 2rem; /* Padding lateral solicitado */
+                font-size: 1.1rem;
+            }
         }
     }
 }
@@ -104,6 +109,10 @@
 
     @media (max-width: 968px) {
         grid-template-columns: 1fr;
+        
+        .about-text {
+            padding: 0 1.5rem; /* Padding lateral solicitado */
+        }
     }
 
     .about-image img {
