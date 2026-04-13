@@ -22,9 +22,14 @@ const Skills = () => {
                             <h3><i className={`fas ${cat.icon}`}></i> {cat.title}</h3>
                             <div className="skill-list">
                                 {cat.skills.map((skill, j) => (
-                                    <div key={j} className="skill-item">
-                                        <i className={`${skill.fab ? 'fab' : 'fas'} ${skill.icon}`}></i>
-                                        {skill.name}
+                                    <div key={j} className="skill-item-wrapper">
+                                        <div className="skill-item">
+                                            <i className={`${skill.fab ? 'fab' : 'fas'} ${skill.icon}`}></i>
+                                            <span className="skill-name">{skill.name.split(':')[0]}</span>
+                                        </div>
+                                        {skill.name.includes(':') && (
+                                            <span className="skill-level">{skill.name.split(':')[1]}</span>
+                                        )}
                                     </div>
                                 ))}
                             </div>

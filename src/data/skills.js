@@ -33,6 +33,7 @@ export const getSkillsData = (t) => [
             { name: 'DOCKER', icon: 'fa-docker', fab: true },
             { name: 'GIT/GITHUB', icon: 'fa-git-alt', fab: true },
             { name: 'VERCEL', icon: 'fa-cloud', fab: false },
+            { name: 'RAILWAY', icon: 'fa-train', fab: false },
             { name: 'ANTIGRAVITY', icon: 'fa-rocket', fab: false },
         ]
     },
@@ -42,7 +43,8 @@ export const getSkillsData = (t) => [
         skills: [
             { name: 'FIGMA', icon: 'fa-figma', fab: true },
             { name: 'UI/UX', icon: 'fa-pen-nib', fab: false },
-            { name: 'CANVA', icon: 'fa-palette', fab: false },
+            { name: 'POWER BI', icon: 'fa-chart-bar', fab: false },
+            { name: t.skill_office, icon: 'fa-laptop', fab: false },
             { name: 'SCRUM', icon: 'fa-tasks', fab: false },
             { name: 'TRELLO', icon: 'fa-tasks', fab: false },
         ]
