@@ -16,7 +16,7 @@ const Home = () => {
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
         let startTime = null;
-        const duration = 1200; // Más lento y suave
+        const duration = 1500; // Aún más lento y cinemático
 
         const animation = (currentTime) => {
             if (startTime === null) startTime = currentTime;
