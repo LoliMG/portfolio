@@ -93,6 +93,11 @@
     animation-delay: calc(var(--char-index) * 0.02s);
 }
 
+.cascade-char.space {
+    width: 0.25em;
+    display: inline-block;
+}
+
 h1 .cascade-char {
     background: linear-gradient(90deg, #a0f0ff, var(--text-primary), #a0f0ff);
     background-size: 200% auto;

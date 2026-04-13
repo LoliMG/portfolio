@@ -46,7 +46,7 @@ const Home = () => {
                     </span>
                     {wordIdx < arr.length - 1 && (
                         <span 
-                            className="cascade-char" 
+                            className="cascade-char space" 
                             style={{ '--char-index': spaceIdx }}
                         >
                             {' '}
