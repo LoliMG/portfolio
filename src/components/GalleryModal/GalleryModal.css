@@ -113,10 +113,6 @@
         }
     }
 
-    /* Animaciones */
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-
     /* Responsivo para Móvil */
     @media (max-width: 768px) {
         .gallery-nav {
@@ -145,3 +141,7 @@
         }
     }
 }
+
+/* Animaciones (Fuera del nesting para compatibilidad con minificadores) */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
