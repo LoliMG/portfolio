@@ -67,7 +67,7 @@ export const translations = {
         nav_projects: "Projects",
         hero_hi: "Hi, I'm ",
         hero_name: "Loli Mariscal",
-        hero_role: "Fullstack Developer",
+        hero_role: "Fullstack Web Developer",
         hero_p: "Functional web applications with good design and better user experience.",
         btn_work: "View my work",
         scroll_about: "about me",
