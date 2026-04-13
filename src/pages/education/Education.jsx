@@ -12,15 +12,18 @@ const Education = () => {
         <div className="page active">
             <div className="container">
                 <h2 className="section-title">{t.edu_title}</h2>
-                <div className="education-grid">
+                <div className="education-list">
                     {educationItems.map((item, index) => (
-                        <GlassCard key={index} className="education-card" variant="small">
+                        <GlassCard key={index} className="education-card">
                             <div className="edu-icon">
                                 <i className={`fas ${item.icon}`}></i>
                             </div>
                             <div className="edu-info">
-                                <h3>{item.title} ({item.year})</h3>
+                                <h3>{item.title}</h3>
                                 <p>{item.school}</p>
+                            </div>
+                            <div className="edu-year-box">
+                                <span className="year-label">{item.year}</span>
                             </div>
                         </GlassCard>
                     ))}

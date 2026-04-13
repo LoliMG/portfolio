@@ -38,5 +38,9 @@
                 }
             }
         }
+
+        &.is-languages .skill-list {
+            grid-template-columns: 1fr;
+        }
     }
 }

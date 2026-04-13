@@ -29,11 +29,6 @@ const GalleryModal = ({ isOpen, closeModal, slides }) => {
 
     return (
         <div className="gallery-overlay" onClick={closeModal}>
-            {/* Close Button - Top Right (Standard) */}
-            <button className="gallery-close" onClick={closeModal}>
-                <i className="fas fa-times"></i>
-            </button>
-
             {/* Navigation Arrows */}
             {slides.length > 1 && (
                 <>
@@ -48,6 +43,11 @@ const GalleryModal = ({ isOpen, closeModal, slides }) => {
 
             {/* Main Content */}
             <div className="gallery-content" onClick={(e) => e.stopPropagation()}>
+                {/* Close Button - Top Right of Image Container */}
+                <button className="gallery-close" onClick={closeModal}>
+                    <i className="fas fa-times"></i>
+                </button>
+
                 <img 
                     src={slides[currentSlide]} 
                     alt={`Project screenshot ${currentSlide + 1}`} 

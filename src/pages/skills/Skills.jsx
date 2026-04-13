@@ -14,7 +14,11 @@ const Skills = () => {
                 <h2 className="section-title">{t.skills_title}</h2>
                 <div className="skills-container">
                     {skillCategories.map((cat, i) => (
-                        <GlassCard key={i} className="skill-category" variant="zoom">
+                        <GlassCard 
+                            key={i} 
+                            className={`skill-category ${cat.icon === 'fa-language' ? 'is-languages' : ''}`} 
+                            variant="zoom"
+                        >
                             <h3><i className={`fas ${cat.icon}`}></i> {cat.title}</h3>
                             <div className="skill-list">
                                 {cat.skills.map((skill, j) => (
