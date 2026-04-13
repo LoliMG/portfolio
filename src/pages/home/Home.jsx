@@ -40,19 +40,17 @@ const Home = () => {
             const spaceIdx = currentIdx++;
             
             return (
-                <React.Fragment key={wordIdx}>
-                    <span style={{ display: 'inline-block' }}>
-                        {wordChars}
-                    </span>
+                <span key={wordIdx} className="word-wrapper">
+                    <span className="word-chars">{wordChars}</span>
                     {wordIdx < arr.length - 1 && (
                         <span 
                             className="cascade-char space" 
                             style={{ '--char-index': spaceIdx }}
                         >
-                            {' '}
+                            &nbsp;
                         </span>
                     )}
-                </React.Fragment>
+                </span>
             );
         });
     };
@@ -61,7 +59,7 @@ const Home = () => {
         <div className="page active home-page">
             {/* Hero Section */}
             <section className="hero">
-                <div className="hero-content">
+                <div className="hero-content" key={t.hero_role}>
                     <h2 className="cascade-container">
                         {renderCascadingText(t.hero_hi)}
                         <span className="accent">
