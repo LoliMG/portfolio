@@ -67,6 +67,18 @@ const Home = () => {
         });
     };
 
+    const techLogos = [
+        { icon: 'fa-react', fab: true, color: '#61DAFB', name: 'React' },
+        { icon: 'fa-js', fab: true, color: '#F7DF1E', name: 'JS' },
+        { icon: 'fa-node-js', fab: true, color: '#339933', name: 'Node.js' },
+        { icon: 'fa-html5', fab: true, color: '#E34F26', name: 'HTML5' },
+        { icon: 'fa-css3-alt', fab: true, color: '#1572B6', name: 'CSS3' },
+        { icon: 'fa-database', fab: false, color: '#4479A1', name: 'SQL' },
+        { icon: 'fa-docker', fab: true, color: '#2496ED', name: 'Docker' },
+        { icon: 'fa-git-alt', fab: true, color: '#F05032', name: 'Git' },
+        { icon: 'fa-figma', fab: true, color: '#F24E1E', name: 'Figma' }
+    ];
+
     return (
         <div className="page active home-page">
             {/* Hero Section */}
@@ -93,18 +105,11 @@ const Home = () => {
                     {/* Tech Slider */}
                     <div className="tech-slider fade-in">
                         <div className="tech-track">
-                            {[...Array(2)].map((_, i) => (
-                                <React.Fragment key={i}>
-                                    <div className="tech-item"><i className="fab fa-react" style={{color: '#61DAFB'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-js" style={{color: '#F7DF1E'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-node-js" style={{color: '#339933'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-html5" style={{color: '#E34F26'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-css3-alt" style={{color: '#1572B6'}}></i></div>
-                                    <div className="tech-item"><i className="fas fa-database" style={{color: '#4479A1'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-docker" style={{color: '#2496ED'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-git-alt" style={{color: '#F05032'}}></i></div>
-                                    <div className="tech-item"><i className="fab fa-figma" style={{color: '#F24E1E'}}></i></div>
-                                </React.Fragment>
+                            {[...techLogos, ...techLogos].map((tech, i) => (
+                                <div key={i} className="tech-item">
+                                    <i className={`${tech.fab ? 'fab' : 'fas'} ${tech.icon}`} style={{ color: tech.color }}></i>
+                                    <span className="tech-name">{tech.name}</span>
+                                </div>
                             ))}
                         </div>
                     </div>
