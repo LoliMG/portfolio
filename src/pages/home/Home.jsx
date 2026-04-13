@@ -47,9 +47,9 @@ const Home = () => {
                     {wordIdx < arr.length - 1 && (
                         <span 
                             className="cascade-char" 
-                            style={{ '--char-index': spaceIdx, display: 'inline-block' }}
+                            style={{ '--char-index': spaceIdx }}
                         >
-                            &nbsp;
+                            {' '}
                         </span>
                     )}
                 </React.Fragment>

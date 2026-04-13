@@ -55,8 +55,24 @@
             }
 
             p {
-                padding: 0 2rem;
+                padding: 0 1rem;
                 font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+
+            .tech-slider {
+                margin: 2rem auto;
+                max-width: 300px;
             }
         }
     }
