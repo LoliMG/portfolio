@@ -9,19 +9,31 @@ const Home = () => {
 
     const scrollToAbout = (e) => {
         e.preventDefault();
-        const element = document.getElementById('about-me');
-        if (element) {
-            const offset = 80; // Compensación para el navbar
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = element.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
+        const target = document.getElementById('about-me');
+        if (!target) return;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        let startTime = null;
+        const duration = 1200; // Más lento y suave
+
+        const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        };
+
+        const ease = (t, b, c, d) => {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        };
+
+        requestAnimationFrame(animation);
     };
 
     const renderCascadingText = (text, startIndex = 0) => {
