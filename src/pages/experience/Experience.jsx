@@ -22,7 +22,21 @@ const Experience = () => {
                                 <div className="exp-info">
                                     <h3>{item.title}</h3>
                                     <h4>{item.company}</h4>
-                                    <p>{item.desc}</p>
+                                    
+                                    {item.projects ? (
+                                        <div className="exp-projects">
+                                            {item.projects.map((proj, pIdx) => (
+                                                <div key={pIdx} className="project-item">
+                                                    <div className="project-header">
+                                                        <span className="project-date">{proj.date}</span>
+                                                    </div>
+                                                    <p className="project-desc">{proj.desc}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <p className="exp-desc">{item.desc}</p>
+                                    )}
                                 </div>
                                 <div className="exp-date-box">
                                     <span className="exp-date-label">{item.date}</span>

@@ -31,6 +31,32 @@ export const getProjectsData = (t, openModal) => [
         ]
     },
     {
+        title: 'EventOS',
+        desc: t.proj_data_5,
+        tags: ['React', 'Node.js', 'Express', 'Google Calendar API', 'PostgreSQL', 'Supabase'],
+        cover: '/assets/EventOS/eventos-1.png',
+        links: [
+            {
+                type: 'gallery',
+                action: () => openModal([
+                    '/assets/EventOS/eventos-1.png',
+                    '/assets/EventOS/eventos-2.png',
+                    '/assets/EventOS/eventos-3.png',
+                    '/assets/EventOS/eventos-4.png',
+                    '/assets/EventOS/eventos-5.png'
+                ]),
+                label: t.gallery_btn
+            }
+        ],
+        slides: [
+            '/assets/EventOS/eventos-1.png',
+            '/assets/EventOS/eventos-2.png',
+            '/assets/EventOS/eventos-3.png',
+            '/assets/EventOS/eventos-4.png',
+            '/assets/EventOS/eventos-5.png'
+        ]
+    },
+    {
         title: 'CircularScore',
         desc: t.proj_data_2,
         tags: ['React', 'Bootstrap', 'CSS3', 'Node.js', 'Express', 'MySQL', 'Vite'],

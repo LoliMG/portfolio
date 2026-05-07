@@ -50,7 +50,8 @@ export const translations = {
         proj_data_1: "Una aplicación utilizada como diario para llevar un seguimiento de los hábitos que quieres cumplir y seguir tus rutinas.",
         proj_data_2: "Desarrollo Fullstack de una aplicación web dedicada a la formación de empresas en implicación medioambiental.",
         proj_data_3: "Una aplicación de diario de lectura personal para guardar, categorizar y puntuar los libros que has leído.",
-        proj_data_4: "Mi portafolio personal (esta misma página), desarrollado con un enfoque en el diseño premium, arquitectura modular y experiencia de usuario."
+        proj_data_4: "Mi portafolio personal (esta misma página), desarrollado con un enfoque en el diseño premium, arquitectura modular y experiencia de usuario.",
+        proj_data_5: "Plataforma integral para la gestión y organización de eventos laborales. Permite la coordinación de turnos de personal, el seguimiento detallado de horas trabajadas y la optimización de la logística de equipo mediante una interfaz intuitiva."
     },
     en: {
         ongoing: "Ongoing",
@@ -98,6 +99,7 @@ export const translations = {
         proj_data_1: "A journal application to track the habits you want to accomplish and follow your routines.",
         proj_data_2: "Fullstack development of a web application dedicated to corporate training in environmental involvement.",
         proj_data_3: "A personal reading diary app to save, categorize, and rank the books you've read.",
-        proj_data_4: "My personal portfolio (this same page), developed with a focus on premium design, modular architecture, and user experience."
+        proj_data_4: "My personal portfolio (this same page), developed with a focus on premium design, modular architecture, and user experience.",
+        proj_data_5: "Comprehensive platform for managing and organizing work events. It enables staff shift coordination, detailed tracking of hours worked, and team logistics optimization through an intuitive interface."
     }
 };
