@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import GlassCard from '../../components/GlassCard/GlassCard';
 import ProjectButton from '../../components/ProjectButton/ProjectButton';
@@ -45,10 +45,10 @@ const Projects = () => {
                                 </div>
                                 <div className="project-links">
                                     {proj.links.map((link, k) => (
-                                        <ProjectButton 
-                                            key={k} 
-                                            type={link.type} 
-                                            url={link.url} 
+                                        <ProjectButton
+                                            key={k}
+                                            type={link.type}
+                                            url={link.url}
                                             onClick={link.action}
                                             label={link.label}
                                         />
@@ -60,10 +60,10 @@ const Projects = () => {
                 </div>
             </div>
 
-            <GalleryModal 
-                isOpen={isModalOpen} 
-                closeModal={closeModal} 
-                slides={modalSlides} 
+            <GalleryModal
+                isOpen={isModalOpen}
+                closeModal={closeModal}
+                slides={modalSlides}
             />
         </div>
     );

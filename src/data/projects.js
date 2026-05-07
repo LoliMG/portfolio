@@ -21,7 +21,7 @@ export const getProjectsData = (t, openModal) => [
                 ]),
                 label: t.gallery_btn
             },
-            { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
+            //     { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
         ],
         slides: [
             '/assets/GoodHabit/gh1.png',
