@@ -43,16 +43,16 @@ const GalleryModal = ({ isOpen, closeModal, slides }) => {
 
             {/* Main Content */}
             <div className="gallery-content" onClick={(e) => e.stopPropagation()}>
-                {/* Close Button - Top Right of Image Container */}
-                <button className="gallery-close" onClick={closeModal}>
-                    <i className="fas fa-times"></i>
-                </button>
-
                 <img 
                     src={slides[currentSlide]} 
                     alt={`Project screenshot ${currentSlide + 1}`} 
                     className="gallery-image"
                 />
+
+                {/* Close Button - Moved after image to ensure it's on top */}
+                <button className="gallery-close" onClick={closeModal} aria-label="Close gallery">
+                    <i className="fas fa-times" style={{ pointerEvents: 'none' }}></i>
+                </button>
                 
                 {/* Counter / Dots */}
                 {slides.length > 1 && (

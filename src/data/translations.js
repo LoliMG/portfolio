@@ -5,6 +5,7 @@
 
 export const translations = {
     es: {
+        ongoing: "Cursando",
         nav_home: "Inicio",
         nav_exp: "Experiencia",
         nav_edu: "Formación",
@@ -43,14 +44,10 @@ export const translations = {
         exp_h3_4: "Monitora de equitación, entrenadora equina",
         exp_h4_4: "Centro Ecuestre",
         exp_p_4: "Coordinación y supervisión las tareas de mantenimiento de instalaciones, contacto y trato con clientes y alimentación de los caballos.",
-        exp_h3_5: "Moza de cuadra",
-        exp_h4_5: "Centro Ecuestre",
-        exp_p_5: "Alimentación de los caballos, limpieza y mantenimiento de instalaciones.",
         edu_p_1: "Big Data",
         edu_p_2: "Desarrolladora web Fullstack",
         edu_p_3: "Grado Medio Técnico Deportivo de Equitación",
         edu_p_4: "Asistente Técnico de Veterinaria Equina",
-        edu_p_5: "Educación Secundaria Obligatoria",
         skill_cat_backend: "Backend",
         skill_cat_devops: "DevOps y Cloud",
         skill_cat_design: "Diseño y Herramientas",
@@ -61,6 +58,7 @@ export const translations = {
         proj_data_4: "Mi portafolio personal (esta misma página), desarrollado con un enfoque en el diseño premium, arquitectura modular y experiencia de usuario."
     },
     en: {
+        ongoing: "Ongoing",
         nav_home: "Home",
         nav_exp: "Experience",
         nav_edu: "Education",
@@ -99,14 +97,10 @@ export const translations = {
         exp_h3_4: "Riding Instructor, Horse Trainer",
         exp_h4_4: "Equestrian Center",
         exp_p_4: "Coordination and supervision of facility maintenance, client relations, and horse feeding.",
-        exp_h3_5: "Stable Groom",
-        exp_h4_5: "Equestrian Center",
-        exp_p_5: "Feeding horses, cleaning, and maintenance of equestrian facilities.",
         edu_p_1: "Big Data",
         edu_p_2: "Fullstack Web Developer",
         edu_p_3: "Technical Degree in Equestrian Sports",
         edu_p_4: "Equine Veterinary Technician Assistant",
-        edu_p_5: "High School Education",
         skill_cat_backend: "Backend",
         skill_cat_devops: "DevOps & Cloud",
         skill_cat_design: "Design & Tools",

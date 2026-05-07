@@ -10,7 +10,7 @@ export const getProjectsData = (t, openModal) => [
         tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
         cover: '/assets/GoodHabit/gh1.png',
         links: [
-            { type: 'app', url: 'https://good-habit.vercel.app/' },
+            //             { type: 'app', url: 'https://good-habit.vercel.app/' },
             {
                 type: 'gallery',
                 action: () => openModal([
@@ -21,7 +21,7 @@ export const getProjectsData = (t, openModal) => [
                 ]),
                 label: t.gallery_btn
             },
-            //     { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
+            { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
         ],
         slides: [
             '/assets/GoodHabit/gh1.png',
