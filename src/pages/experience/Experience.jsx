@@ -38,9 +38,11 @@ const Experience = () => {
                                         <p className="exp-desc">{item.desc}</p>
                                     )}
                                 </div>
-                                <div className="exp-date-box">
-                                    <span className="exp-date-label">{item.date}</span>
-                                </div>
+                                {!item.projects && (
+                                    <div className="exp-date-box">
+                                        <span className="exp-date-label">{item.date}</span>
+                                    </div>
+                                )}
                             </GlassCard>
                         </div>
                     ))}
