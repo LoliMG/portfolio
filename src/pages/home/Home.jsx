@@ -79,22 +79,25 @@ const Home = () => {
         { icon: 'fa-figma', fab: true, color: '#F24E1E', name: 'Figma' }
     ];
 
+    const heroName = "Loli Mariscal";
+    const heroRole = "Fullstack Web Developer";
+
     return (
         <div className="page active home-page">
             {/* Hero Section */}
             <section className="hero">
-                <div className="hero-content" key={t.hero_role}>
+                <div className="hero-content" key={heroRole}>
                     <h2 className="cascade-container">
                         {renderCascadingText(t.hero_hi)}
                         <span className="accent">
-                            {renderCascadingText(t.hero_name, t.hero_hi.length)}
+                            {renderCascadingText(heroName, t.hero_hi.length)}
                         </span>
                     </h2>
                     <h1 className="cascade-container">
-                        {renderCascadingText(t.hero_role, t.hero_hi.length + t.hero_name.length)}
+                        {renderCascadingText(heroRole, t.hero_hi.length + heroName.length)}
                     </h1>
                     <p className="cascade-container">
-                        {renderCascadingText(t.hero_p, t.hero_hi.length + t.hero_name.length + t.hero_role.length)}
+                        {renderCascadingText(t.hero_p, t.hero_hi.length + heroName.length + heroRole.length)}
                     </p>
                     <div className="cta-container fade-in">
                         <Link to="/projects" className="btn primary-btn">
