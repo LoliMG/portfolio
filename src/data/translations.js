@@ -51,7 +51,8 @@ export const translations = {
         proj_data_2: "Desarrollo Fullstack de una aplicación web dedicada a la formación de empresas en implicación medioambiental.",
         proj_data_3: "Una aplicación de diario de lectura personal para guardar, categorizar y puntuar los libros que has leído.",
         proj_data_4: "Mi portafolio personal (esta misma página), desarrollado con un enfoque en el diseño premium, arquitectura modular y experiencia de usuario.",
-        proj_data_5: "Plataforma integral para la gestión y organización de eventos laborales. Permite la coordinación de turnos de personal, el seguimiento detallado de horas trabajadas y la optimización de la logística de equipo mediante una interfaz intuitiva."
+        proj_data_5: "Plataforma integral para la gestión y organización de eventos laborales. Permite la coordinación de turnos de personal, el seguimiento detallado de horas trabajadas y la optimización de la logística de equipo mediante una interfaz intuitiva.",
+        proj_data_6: "Juego de mesa estratégico de dados para 2 jugadores (Matatena / Knucklebones) desarrollado con HTML, CSS y JavaScript, inspirado en Cult of the Lamb con animaciones 3D y mecánicas de multiplicadores por columna."
     },
     en: {
         ongoing: "Ongoing",
@@ -100,6 +101,7 @@ export const translations = {
         proj_data_2: "Fullstack development of a web application dedicated to corporate training in environmental involvement.",
         proj_data_3: "A personal reading diary app to save, categorize, and rank the books you've read.",
         proj_data_4: "My personal portfolio (this same page), developed with a focus on premium design, modular architecture, and user experience.",
-        proj_data_5: "Comprehensive platform for managing and organizing work events. It enables staff shift coordination, detailed tracking of hours worked, and team logistics optimization through an intuitive interface."
+        proj_data_5: "Comprehensive platform for managing and organizing work events. It enables staff shift coordination, detailed tracking of hours worked, and team logistics optimization through an intuitive interface.",
+        proj_data_6: "Strategic 2-player dice board game (Matatena / Knucklebones) built with HTML, CSS, and JavaScript, inspired by Cult of the Lamb featuring 3D animations and column multiplier mechanics."
     }
 };

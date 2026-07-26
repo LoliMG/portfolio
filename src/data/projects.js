@@ -5,6 +5,30 @@
 
 export const getProjectsData = (t, openModal) => [
     {
+        title: 'Matatena',
+        desc: t.proj_data_6,
+        tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+        cover: '/assets/Matatena/matatena1.png',
+        links: [
+            { type: 'app', url: 'https://matatena-eight.vercel.app/' },
+            {
+                type: 'gallery',
+                action: () => openModal([
+                    '/assets/Matatena/matatena1.png',
+                    '/assets/Matatena/matatena2.png',
+                    '/assets/Matatena/matatena3.png'
+                ]),
+                label: t.gallery_btn
+            },
+            { type: 'github', url: 'https://github.com/LoliMG/matatena' }
+        ],
+        slides: [
+            '/assets/Matatena/matatena1.png',
+            '/assets/Matatena/matatena2.png',
+            '/assets/Matatena/matatena3.png'
+        ]
+    },
+    {
         title: 'GoodHabits',
         desc: t.proj_data_1,
         tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
