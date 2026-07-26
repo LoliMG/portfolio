@@ -6,10 +6,7 @@ import GalleryModal from '../../components/GalleryModal/GalleryModal';
 import { getProjectsData } from '../../data/projects';
 import './Projects.css';
 
-const ProjectCard = ({ proj, t }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const isLongText = proj.desc && proj.desc.length > 90;
-
+const ProjectCard = ({ proj }) => {
     return (
         <GlassCard className="project-card" variant="zoom">
             {proj.cover && (
@@ -19,18 +16,9 @@ const ProjectCard = ({ proj, t }) => {
             )}
             <div className="project-info">
                 <h3>{proj.title}</h3>
-                <p className={isExpanded ? 'expanded' : ''}>
+                <p>
                     {proj.desc}
                 </p>
-                {isLongText && (
-                    <button
-                        type="button"
-                        className="btn-expand-desc"
-                        onClick={() => setIsExpanded(!isExpanded)}
-                    >
-                        {isExpanded ? (t.read_less || 'Ver menos') : (t.read_more || 'Ver más')}
-                    </button>
-                )}
                 <div className="tags">
                     {proj.tags.map((tag, j) => <span key={j}>{tag}</span>)}
                 </div>
@@ -75,7 +63,7 @@ const Projects = () => {
                 <h2 className="section-title">{t.projects_title}</h2>
                 <div className="projects-grid">
                     {projects.map((proj, i) => (
-                        <ProjectCard key={i} proj={proj} t={t} />
+                        <ProjectCard key={i} proj={proj} />
                     ))}
                 </div>
             </div>
