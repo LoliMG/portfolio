@@ -46,13 +46,37 @@
 
             p {
                 color: var(--text-secondary);
-                font-size: 1rem;
-                margin-bottom: 2rem;
-                line-height: 1.7;
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+                line-height: 1.6;
                 display: -webkit-box;
-                -webkit-line-clamp: 4;
+                -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+
+                &.expanded {
+                    display: block;
+                    overflow: visible;
+                    -webkit-line-clamp: unset;
+                }
+            }
+
+            .btn-expand-desc {
+                background: transparent;
+                border: none;
+                color: var(--accent-color);
+                font-size: 0.8rem;
+                font-weight: 600;
+                cursor: pointer;
+                padding: 0;
+                margin-bottom: 1.2rem;
+                align-self: flex-start;
+                transition: opacity 0.2s ease;
+                text-decoration: underline;
+
+                &:hover {
+                    opacity: 0.8;
+                }
             }
 
             .tags {

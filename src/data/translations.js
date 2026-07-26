@@ -23,6 +23,8 @@ export const translations = {
         skills_title: "Experiencia Técnica",
         projects_title: "Proyectos",
         gallery_btn: "Ver Galería",
+        read_more: "Ver más",
+        read_less: "Ver menos",
         skill_cat_languages: "Idiomas",
         lang_es: "Español",
         lang_en: "Inglés",
@@ -47,12 +49,12 @@ export const translations = {
         skill_cat_devops: "DevOps y Cloud",
         skill_cat_design: "Diseño y Herramientas",
         skill_office: "Ofimática",
-        proj_data_1: "Una aplicación utilizada como diario para llevar un seguimiento de los hábitos que quieres cumplir y seguir tus rutinas.",
-        proj_data_2: "Desarrollo Fullstack de una aplicación web dedicada a la formación de empresas en implicación medioambiental.",
-        proj_data_3: "Una aplicación de diario de lectura personal para guardar, categorizar y puntuar los libros que has leído.",
-        proj_data_4: "Mi portafolio personal (esta misma página), desarrollado con un enfoque en el diseño premium, arquitectura modular y experiencia de usuario.",
-        proj_data_5: "Plataforma integral para la gestión y organización de eventos laborales. Permite la coordinación de turnos de personal, el seguimiento detallado de horas trabajadas y la optimización de la logística de equipo mediante una interfaz intuitiva.",
-        proj_data_6: "Juego de mesa estratégico de dados para 2 jugadores (Matatena / Knucklebones) desarrollado con HTML, CSS y JavaScript, inspirado en Cult of the Lamb con animaciones 3D y mecánicas de multiplicadores por columna."
+        proj_data_1: "Aplicación interactiva estilo diario para llevar el seguimiento de tus hábitos diarios y rutinas.",
+        proj_data_2: "Plataforma web para la formación de empresas en sostenibilidad e implicación medioambiental.",
+        proj_data_3: "Diario de lectura personal para guardar, categorizar y puntuar tus libros leídos.",
+        proj_data_4: "Portafolio personal interactivo con diseño modular, temas personalizados y soporte multi-idioma.",
+        proj_data_5: "Plataforma para gestión de eventos laborales: coordinación de turnos, seguimiento de horas y logística de equipo.",
+        proj_data_6: "Juego de dados estratégico para 2 jugadores (Knucklebones) inspirado en Cult of the Lamb, con animaciones 3D y multiplicadores."
     },
     en: {
         ongoing: "Ongoing",
@@ -73,6 +75,8 @@ export const translations = {
         skills_title: "Technical Experience",
         projects_title: "Projects",
         gallery_btn: "View Gallery",
+        read_more: "Read more",
+        read_less: "Read less",
         skill_cat_languages: "Languages",
         lang_es: "Spanish",
         lang_en: "English",
@@ -97,11 +101,11 @@ export const translations = {
         skill_cat_devops: "DevOps & Cloud",
         skill_cat_design: "Design & Tools",
         skill_office: "Office Software",
-        proj_data_1: "A journal application to track the habits you want to accomplish and follow your routines.",
-        proj_data_2: "Fullstack development of a web application dedicated to corporate training in environmental involvement.",
-        proj_data_3: "A personal reading diary app to save, categorize, and rank the books you've read.",
-        proj_data_4: "My personal portfolio (this same page), developed with a focus on premium design, modular architecture, and user experience.",
-        proj_data_5: "Comprehensive platform for managing and organizing work events. It enables staff shift coordination, detailed tracking of hours worked, and team logistics optimization through an intuitive interface.",
-        proj_data_6: "Strategic 2-player dice board game (Matatena / Knucklebones) built with HTML, CSS, and JavaScript, inspired by Cult of the Lamb featuring 3D animations and column multiplier mechanics."
+        proj_data_1: "Interactive habit-tracking journal app to set goals and build daily routines.",
+        proj_data_2: "Web platform dedicated to corporate training in sustainability and environmental impact.",
+        proj_data_3: "Personal reading diary app to save, organize, and rate your read books.",
+        proj_data_4: "Interactive personal portfolio featuring modular architecture, custom themes, and multi-language support.",
+        proj_data_5: "Comprehensive event management platform for staff shifts, hour tracking, and team logistics.",
+        proj_data_6: "Strategic 2-player dice board game (Knucklebones) inspired by Cult of the Lamb, with 3D animations and column multipliers."
     }
 };
