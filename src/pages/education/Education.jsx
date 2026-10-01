@@ -9,7 +9,7 @@ const Education = () => {
     const educationItems = getEducationData(t);
 
     return (
-        <div className="page active">
+        <section id="education" className="section-block reveal-on-scroll">
             <div className="container">
                 <h2 className="section-title">{t.edu_title}</h2>
                 <div className="education-list">
@@ -29,7 +29,7 @@ const Education = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

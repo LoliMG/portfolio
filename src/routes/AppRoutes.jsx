@@ -13,10 +13,10 @@ const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
-                    <Route path="experience" element={<Experience />} />
-                    <Route path="education" element={<Education />} />
-                    <Route path="skills" element={<Skills />} />
-                    <Route path="projects" element={<Projects />} />
+                    <Route path="projects" element={<Home autoScrollTo="projects" />} />
+                    <Route path="experience" element={<Home autoScrollTo="experience" />} />
+                    <Route path="education" element={<Home autoScrollTo="education" />} />
+                    <Route path="skills" element={<Home autoScrollTo="skills" />} />
                     {/* Catch-all route for 404 Error Page */}
                     <Route path="*" element={<NotFoundError />} />
                 </Route>

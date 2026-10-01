@@ -5,58 +5,10 @@
 
 export const getProjectsData = (t, openModal) => [
     {
-        title: 'Matatena',
-        desc: t.proj_data_6,
-        tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
-        cover: '/assets/Matatena/matatena1.png',
-        links: [
-            { type: 'app', url: 'https://matatena-eight.vercel.app/' },
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/Matatena/matatena1.png',
-                    '/assets/Matatena/matatena2.png',
-                    '/assets/Matatena/matatena3.png'
-                ]),
-                label: t.gallery_btn
-            },
-            { type: 'github', url: 'https://github.com/LoliMG/matatena' }
-        ],
-        slides: [
-            '/assets/Matatena/matatena1.png',
-            '/assets/Matatena/matatena2.png',
-            '/assets/Matatena/matatena3.png'
-        ]
-    },
-    {
-        title: 'GoodHabits',
-        desc: t.proj_data_1,
-        tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
-        cover: '/assets/GoodHabit/gh1.png',
-        links: [
-            //             { type: 'app', url: 'https://good-habit.vercel.app/' },
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/GoodHabit/gh1.png',
-                    '/assets/GoodHabit/gh2.png',
-                    '/assets/GoodHabit/gh3.png',
-                    '/assets/GoodHabit/gh4.png'
-                ]),
-                label: t.gallery_btn
-            },
-            { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
-        ],
-        slides: [
-            '/assets/GoodHabit/gh1.png',
-            '/assets/GoodHabit/gh2.png',
-            '/assets/GoodHabit/gh3.png',
-            '/assets/GoodHabit/gh4.png'
-        ]
-    },
-    {
         title: 'EventOS',
         desc: t.proj_data_5,
+        badge: '⚡ Fullstack App',
+        isLive: false,
         tags: ['React', 'Node.js', 'Express', 'Google Calendar API', 'PostgreSQL', 'Supabase'],
         cover: '/assets/EventOS/eventos-1.png',
         links: [
@@ -81,8 +33,37 @@ export const getProjectsData = (t, openModal) => [
         ]
     },
     {
+        title: 'GoodHabits',
+        desc: t.proj_data_1,
+        badge: '⚡ Fullstack App',
+        isLive: false,
+        tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
+        cover: '/assets/GoodHabit/gh1.png',
+        links: [
+            {
+                type: 'gallery',
+                action: () => openModal([
+                    '/assets/GoodHabit/gh1.png',
+                    '/assets/GoodHabit/gh2.png',
+                    '/assets/GoodHabit/gh3.png',
+                    '/assets/GoodHabit/gh4.png'
+                ]),
+                label: t.gallery_btn
+            },
+            { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
+        ],
+        slides: [
+            '/assets/GoodHabit/gh1.png',
+            '/assets/GoodHabit/gh2.png',
+            '/assets/GoodHabit/gh3.png',
+            '/assets/GoodHabit/gh4.png'
+        ]
+    },
+    {
         title: 'CircularScore',
         desc: t.proj_data_2,
+        badge: '🌱 Fullstack App',
+        isLive: false,
         tags: ['React', 'Bootstrap', 'CSS3', 'Node.js', 'Express', 'MySQL', 'Vite'],
         cover: '/assets/CircularScore/cs1.png',
         links: [
@@ -107,6 +88,8 @@ export const getProjectsData = (t, openModal) => [
     {
         title: 'BookFly',
         desc: t.proj_data_3,
+        badge: '📚 Fullstack App',
+        isLive: false,
         tags: ['React', 'Vite', 'Bootstrap', 'CSS3', 'Node.js', 'MySQL'],
         cover: '/assets/BookFly/bf1.png',
         links: [
@@ -130,8 +113,36 @@ export const getProjectsData = (t, openModal) => [
         ]
     },
     {
+        title: 'Matatena',
+        desc: t.proj_data_6,
+        badge: '🟢 Live Demo',
+        isLive: true,
+        tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
+        cover: '/assets/Matatena/matatena1.png',
+        links: [
+            { type: 'app', url: 'https://matatena-eight.vercel.app/' },
+            {
+                type: 'gallery',
+                action: () => openModal([
+                    '/assets/Matatena/matatena1.png',
+                    '/assets/Matatena/matatena2.png',
+                    '/assets/Matatena/matatena3.png'
+                ]),
+                label: t.gallery_btn
+            },
+            { type: 'github', url: 'https://github.com/LoliMG/matatena' }
+        ],
+        slides: [
+            '/assets/Matatena/matatena1.png',
+            '/assets/Matatena/matatena2.png',
+            '/assets/Matatena/matatena3.png'
+        ]
+    },
+    {
         title: 'Portfolio',
         desc: t.proj_data_4,
+        badge: '✨ SPA Portfolio',
+        isLive: false,
         tags: ['React', 'JavaScript', 'CSS3', 'Vite'],
         cover: '/assets/hero.png',
         links: [

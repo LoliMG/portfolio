@@ -49,10 +49,30 @@
         font-size: 0.95rem;
         transition: var(--transition-speed);
         opacity: 0.8;
+        position: relative;
+        padding-bottom: 6px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 18px;
+            height: 2px;
+            background: var(--accent-color);
+            border-radius: 2px;
+            box-shadow: 0 0 8px var(--accent-glow);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
         &.active, &:hover {
             opacity: 1;
             color: var(--accent-color);
+        }
+
+        &.active::after {
+            transform: translateX(-50%) scaleX(1);
         }
     }
 }

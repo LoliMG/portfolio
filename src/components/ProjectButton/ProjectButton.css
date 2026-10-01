@@ -1,19 +1,21 @@
 .btn-project {
-    width: 100%;
-    padding: 12px;
+    flex: 1 1 calc(50% - 6px);
+    min-width: 120px;
+    padding: 10px 14px;
     border-radius: 12px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    display: flex;
+    letter-spacing: 0.8px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     transition: var(--transition-speed);
     text-decoration: none;
     border: 1px solid transparent;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 /* App & Gallery Style: Dinámico por Tema */

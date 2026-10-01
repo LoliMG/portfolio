@@ -1,144 +1,283 @@
-.skills-container {
+.skills-bento-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 4rem; /* Aumentado para dar aire a las sombras laterales */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    .skill-category {
-        padding: 2.5rem !important;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 1px solid var(--glass-border);
-        position: relative;
-        overflow: hidden;
+.bento-skill-card {
+    padding: 2.2rem !important;
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        opacity: 0.4;
+        transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+        transform: none !important;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 30px var(--accent-glow), inset 0 0 15px var(--accent-glow);
 
         &::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
+            opacity: 1;
         }
 
-        &:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            
-            &::before {
-                opacity: 1;
-            }
-
-            h3 i {
-                transform: scale(1.2) rotate(10deg);
-                color: #fff;
-            }
+        .bento-icon-wrapper i {
+            color: #fff;
+            transform: scale(1.1);
         }
-        
-        h3 {
-            font-size: 1.6rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-primary);
+    }
+
+    .bento-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--glass-border);
+
+        .bento-title-group {
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-weight: 700;
-            position: relative;
+            gap: 14px;
+
+            .bento-icon-wrapper {
+                width: 42px;
+                height: 42px;
+                border-radius: 10px;
+                background: var(--accent-glow);
+                border: 1px solid var(--glass-border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 1.25rem;
+                    color: var(--accent-color);
+                    transition: transform 0.3s ease, color 0.3s ease;
+                }
+            }
+
+            h3 {
+                font-size: 1.35rem;
+                font-weight: 700;
+                color: var(--text-primary);
+                margin: 0;
+            }
+        }
+
+        .bento-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+    }
+
+    .bento-skills-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+
+        .skill-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 11px 16px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
 
             i {
-                color: var(--accent-color);
-                transition: transform 0.3s ease;
+                font-size: 1.35rem;
+                flex-shrink: 0;
+            }
+
+            .chip-name {
+                font-size: 0.92rem;
+                font-weight: 600;
+                color: var(--text-primary);
+                white-space: nowrap;
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: rgba(255, 255, 255, 0.2);
             }
         }
 
-        .skill-list {
+        /* Highlighted AI Card */
+        .skill-chip-highlight {
+            grid-column: 1 / -1;
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 14px 18px;
+            border-radius: 14px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            position: relative;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 6px;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.1);
 
-            .skill-item-wrapper {
-                background: rgba(255, 255, 255, 0.03);
-                border: 1px solid var(--glass-border);
-                padding: 10px 18px;
-                border-radius: 12px;
+            .chip-icon-box {
+                width: 44px;
+                height: 44px;
+                border-radius: 10px;
+                background: rgba(168, 85, 247, 0.15);
+                border: 1px solid rgba(168, 85, 247, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+
+                i {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .chip-content {
                 display: flex;
                 flex-direction: column;
-                gap: 5px;
-                transition: all 0.3s ease;
-                flex: 1 1 calc(50% - 1rem);
-                min-width: 130px;
 
-                &:hover {
-                    background: rgba(255, 255, 255, 0.08);
-                    border-color: rgba(255, 255, 255, 0.2);
-                    transform: scale(1.05);
-
-                    .skill-item i {
-                        transform: translateY(-2px);
-                    }
-                }
-
-                .skill-item {
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-                    color: var(--text-primary);
-                    font-weight: 600;
-                    font-size: 0.95rem;
-
-                    i {
-                        font-size: 1.35rem;
-                        transition: transform 0.3s ease;
-                        /* Colores icónicos por defecto */
-                        &.fa-react { color: #61DAFB; }
-                        &.fa-js-square { color: #F7DF1E; }
-                        &.fa-node-js { color: #339933; }
-                        &.fa-html5 { color: #E34F26; }
-                        &.fa-css3-alt { color: #1572B6; }
-                        &.fa-database { color: #4479A1; }
-                        &.fa-docker { color: #2496ED; }
-                        &.fa-figma { color: #F24E1E; }
-                        &.fa-git-alt { color: #F05032; }
-                        &.fa-train { color: #6a0dad; }
-                        &.fa-chart-bar { color: #F2C811; }
-                        &.fa-laptop { color: #0078D4; }
-                    }
-                }
-
-                .skill-level {
-                    font-size: 0.75rem;
-                    color: var(--accent-color);
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
+                .chip-title {
+                    font-size: 1rem;
                     font-weight: 700;
-                    opacity: 0.8;
+                    color: var(--text-primary);
                 }
+
+                .chip-subtitle {
+                    font-size: 0.78rem;
+                    color: var(--text-secondary);
+                    margin-top: 2px;
+                }
+            }
+
+            &:hover {
+                border-color: rgba(168, 85, 247, 0.6);
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
             }
         }
 
-        &.is-languages .skill-list {
-            flex-direction: column;
-            .skill-item-wrapper {
-                flex: 1 1 100%;
-                flex-direction: row;
-                justify-content: space-between;
+        /* Language rows */
+        .skill-chip-lang {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 12px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+
+            .lang-info {
+                display: flex;
                 align-items: center;
+                gap: 12px;
+
+                i {
+                    font-size: 1.25rem;
+                }
+
+                .lang-name {
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    color: var(--text-primary);
+                }
+            }
+
+            .lang-level-badge {
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: var(--accent-color);
+                background: var(--accent-glow);
+                border: 1px solid var(--glass-border);
+                padding: 4px 10px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.07);
+                border-color: rgba(255, 255, 255, 0.2);
             }
         }
     }
 }
 
-@media (max-width: 480px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+/* Light mode overrides */
+:root[data-theme='light'] {
+    .bento-skill-card {
+        .bento-badge {
+            background: rgba(0, 151, 167, 0.08);
+            color: var(--accent-color);
+            border-color: rgba(0, 151, 167, 0.2);
+        }
 
-    .skill-list .skill-item-wrapper {
-        flex: 1 1 100%;
+        .skill-chip {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 151, 167, 0.15);
+
+            &:hover {
+                background: #ffffff;
+                border-color: var(--accent-color);
+            }
+        }
+
+        .skill-chip-highlight {
+            background: rgba(168, 85, 247, 0.06);
+            border-color: rgba(168, 85, 247, 0.25);
+        }
+
+        .skill-chip-lang {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(0, 151, 167, 0.15);
+
+            &:hover {
+                background: #ffffff;
+                border-color: var(--accent-color);
+            }
+        }
+    }
+}
+
+/* Responsive layout */
+@media (max-width: 850px) {
+    .skills-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .bento-skill-card {
+        padding: 1.6rem !important;
+
+        .bento-card-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .bento-skills-list {
+            grid-template-columns: 1fr;
+        }
     }
 }

@@ -11,6 +11,11 @@ const ProjectCard = ({ proj }) => {
         <GlassCard className="project-card" variant="zoom">
             {proj.cover && (
                 <div className="project-image">
+                    {proj.badge && (
+                        <span className={`project-status-badge ${proj.isLive ? 'is-live' : ''}`}>
+                            {proj.badge}
+                        </span>
+                    )}
                     <img src={proj.cover} alt={proj.title} />
                 </div>
             )}
@@ -58,7 +63,7 @@ const Projects = () => {
     const projects = getProjectsData(t, openModal);
 
     return (
-        <div className="page active">
+        <section id="projects" className="section-block reveal-on-scroll">
             <div className="container">
                 <h2 className="section-title">{t.projects_title}</h2>
                 <div className="projects-grid">
@@ -73,7 +78,7 @@ const Projects = () => {
                 closeModal={closeModal}
                 slides={modalSlides}
             />
-        </div>
+        </section>
     );
 };
 

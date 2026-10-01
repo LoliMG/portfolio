@@ -9,7 +9,7 @@ const Experience = () => {
     const experienceItems = getExperienceData(t);
 
     return (
-        <div className="page active">
+        <section id="experience" className="section-block reveal-on-scroll">
             <div className="container">
                 <h2 className="section-title">{t.exp_title}</h2>
                 <div className="timeline">
@@ -48,7 +48,7 @@ const Experience = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
