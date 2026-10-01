@@ -16,14 +16,15 @@
 }
 
 :root[data-theme='light'] {
-    --bg-color: #f0faff; 
-    --accent-color: #008ba3; 
+    --bg-color: #f0faff;
+    --accent-color: #008ba3;
     --accent-glow: rgba(0, 139, 163, 0.12);
     --dot-color: rgba(0, 139, 163, 0.14);
-    --text-primary: #0a2e36; 
-    --text-secondary: #334e55; /* WCAG AA > 5.5:1 contrast */
+    --text-primary: #0a2e36;
+    --text-secondary: #334e55;
+    /* WCAG AA > 5.5:1 contrast */
     --glass-bg: rgba(255, 255, 255, 0.92);
-    --glass-border: rgba(0, 139, 163, 0.16); 
+    --glass-border: rgba(0, 139, 163, 0.16);
     --glass-blur: blur(10px);
     --transition-speed: 0.4s;
     --nav-bg: rgba(226, 246, 253, 0.88);
@@ -38,9 +39,6 @@
     box-sizing: border-box;
 }
 
-html {
-    /* Eliminamos el smooth nativo para tener control total por JS en el home */
-}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
@@ -70,7 +68,7 @@ html {
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
-    background-image: 
+    background-image:
         radial-gradient(circle at top right, var(--accent-glow) 0%, transparent 65%),
         radial-gradient(circle at bottom left, var(--accent-glow) 0%, transparent 65%),
         radial-gradient(var(--dot-color) 1.2px, transparent 1.2px);
