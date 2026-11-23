@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,10 +52,12 @@
             }
         }
 
-        h2 {
+        .hero-greeting {
             font-size: 1.5rem;
+            font-weight: 700;
             color: var(--text-secondary);
-            margin-bottom: 0.5rem;
+            max-width: none;
+            margin: 0 auto 0.5rem;
         }
 
         h1 {

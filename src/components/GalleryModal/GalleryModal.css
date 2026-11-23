@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.3s ease;
+    animation: galleryFadeIn 0.3s ease;
     user-select: none;
 
     .gallery-content {
@@ -54,6 +54,8 @@
                     width: 6px;
                     height: 6px;
                     background: rgba(255, 255, 255, 0.2);
+                    border: none;
+                    padding: 0;
                     border-radius: 50%;
                     cursor: pointer;
                     transition: 0.3s;
@@ -173,7 +175,7 @@
 }
 
 /* Animaciones (Fuera del nesting para compatibilidad con minificadores) */
-@keyframes fadeIn {
+@keyframes galleryFadeIn {
     from {
         opacity: 0;
     }

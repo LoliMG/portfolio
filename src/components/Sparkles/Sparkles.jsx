@@ -3,6 +3,8 @@ import './Sparkles.css';
 
 const Sparkles = () => {
     useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
         const createSparkle = (x, y) => {
             const sparkle = document.createElement('div');
             sparkle.classList.add('sparkle');

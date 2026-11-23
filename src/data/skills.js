@@ -6,9 +6,9 @@
 export const getSkillsData = (t) => [
     {
         id: 'frontend',
-        title: t.skill_cat_frontend || 'Frontend',
+        title: t.skill_cat_frontend,
         icon: 'fa-code',
-        badge: 'UI & Interacción',
+        badge: t.skill_badge_frontend,
         skills: [
             { name: 'React', icon: 'fa-react', fab: true, color: '#61DAFB' },
             { name: 'JavaScript (ES6+)', icon: 'fa-js-square', fab: true, color: '#F7DF1E' },
@@ -19,9 +19,9 @@ export const getSkillsData = (t) => [
     },
     {
         id: 'backend',
-        title: t.skill_cat_backend || 'Backend & Datos',
+        title: t.skill_cat_backend,
         icon: 'fa-server',
-        badge: 'Arquitectura & APIs',
+        badge: t.skill_badge_backend,
         skills: [
             { name: 'Node.js', icon: 'fa-node-js', fab: true, color: '#339933' },
             { name: 'Express', icon: 'fa-bolt', fab: false, color: '#f59e0b' },
@@ -32,9 +32,9 @@ export const getSkillsData = (t) => [
     },
     {
         id: 'tools',
-        title: t.skill_cat_tools || 'Herramientas & Flujo',
+        title: t.skill_cat_tools,
         icon: 'fa-tools',
-        badge: 'Control & Diseño',
+        badge: t.skill_badge_tools,
         skills: [
             { name: 'Git / GitHub', icon: 'fa-git-alt', fab: true, color: '#F05032' },
             { name: 'Vercel', icon: 'fa-cloud', fab: false, color: '#00d2ff' },
@@ -45,30 +45,30 @@ export const getSkillsData = (t) => [
     },
     {
         id: 'ai-lang',
-        title: t.skill_cat_ai_lang || 'IA & Comunicación',
+        title: t.skill_cat_ai_lang,
         icon: 'fa-brain',
-        badge: 'Productividad & Idiomas',
+        badge: t.skill_badge_ai,
         isSpecial: true,
         skills: [
             { 
-                name: t.skill_ai_dev || 'Desarrollo con IA', 
-                subtitle: t.skill_ai_sub || 'Workflows con IA & Productividad',
+                name: t.skill_ai_dev, 
+                subtitle: t.skill_ai_sub,
                 icon: 'fa-brain', 
                 fab: false, 
                 color: '#a855f7',
                 isHighlight: true 
             },
             { 
-                name: t.lang_es || 'Español', 
-                level: t.level_native || 'Nativo', 
+                name: t.lang_es, 
+                level: t.level_native, 
                 icon: 'fa-globe-europe', 
                 fab: false, 
                 color: '#00d2ff',
                 isLang: true 
             },
             { 
-                name: t.lang_en || 'Inglés', 
-                level: t.level_fluent || 'Fluido', 
+                name: t.lang_en, 
+                level: t.level_fluent, 
                 icon: 'fa-globe-americas', 
                 fab: false, 
                 color: '#3b82f6',

@@ -2,17 +2,27 @@
     display: block;
     padding-top: 120px; /* Incrementado para evitar el solapamiento con el navbar fijo */
     min-height: 100vh;
-    animation: fadeIn 0.8s ease forwards;
+    /* No `forwards`: a transform kept after the animation traps position:fixed children (toast) */
+    animation: fadeIn 0.8s ease;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: none; }
 }
 
 .section-block {
     padding: 5rem 0;
     scroll-margin-top: 80px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
 }
 
 /* Subtle Scroll Reveal */
@@ -25,7 +35,9 @@
 
 .reveal-on-scroll.is-revealed {
     opacity: 1;
-    transform: translateY(0);
+    /* none + auto: a leftover transform/will-change traps the fixed gallery modal inside the section */
+    transform: none;
+    will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -149,14 +161,14 @@
 }
 
 :root[data-theme='light'] .btn.cv-btn {
-    background: #0097a7;
+    background: var(--accent-color);
     color: #ffffff !important;
-    border: 1px solid #00838f;
-    box-shadow: 0 4px 15px rgba(0, 151, 167, 0.3);
+    border: 1px solid color-mix(in srgb, var(--accent-color) 85%, black);
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--accent-color) 30%, transparent);
 
     &:hover {
-        background: #00838f;
+        background: color-mix(in srgb, var(--accent-color) 85%, black);
         color: #ffffff !important;
-        box-shadow: 0 8px 25px rgba(0, 151, 167, 0.45);
+        box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color) 45%, transparent);
     }
 }

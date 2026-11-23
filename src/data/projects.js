@@ -3,34 +3,52 @@
  * Importado en: src/pages/projects/Projects.jsx
  */
 
+const gallery = (folder, files) => files.map(f => `/assets/${folder}/${f}.webp`);
+
+const eventosSlides = gallery('EventOS', ['eventos-1', 'eventos-2', 'eventos-3', 'eventos-4', 'eventos-5']);
+const goodHabitSlides = gallery('GoodHabit', ['gh1', 'gh2', 'gh3', 'gh4']);
+const circularSlides = gallery('CircularScore', ['cs4', 'cs2', 'cs3', 'cs1']);
+const bookFlySlides = gallery('BookFly', ['bf1', 'bf2', 'bf3', 'bf4']);
+const matatenaSlides = gallery('Matatena', ['matatena1', 'matatena2', 'matatena3']);
+const gameroomSlides = gallery('GameroomLibrary', ['room-1', 'console', 'room-2', 'room-3']);
+
 export const getProjectsData = (t, openModal) => [
     {
         title: 'EventOS',
         desc: t.proj_data_5,
-        badge: '⚡ Fullstack App',
+        badge: t.badge_client,
+        note: t.private_note,
         isLive: false,
         tags: ['React', 'Node.js', 'Express', 'Google Calendar API', 'PostgreSQL', 'Supabase'],
-        cover: '/assets/EventOS/eventos-1.png',
+        cover: eventosSlides[0],
         links: [
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/EventOS/eventos-1.png',
-                    '/assets/EventOS/eventos-2.png',
-                    '/assets/EventOS/eventos-3.png',
-                    '/assets/EventOS/eventos-4.png',
-                    '/assets/EventOS/eventos-5.png'
-                ]),
-                label: t.gallery_btn
-            }
+            { type: 'gallery', action: () => openModal(eventosSlides), label: t.gallery_btn }
         ],
-        slides: [
-            '/assets/EventOS/eventos-1.png',
-            '/assets/EventOS/eventos-2.png',
-            '/assets/EventOS/eventos-3.png',
-            '/assets/EventOS/eventos-4.png',
-            '/assets/EventOS/eventos-5.png'
-        ]
+    },
+    {
+        title: 'CircularScore',
+        desc: t.proj_data_2,
+        badge: t.badge_client,
+        note: t.private_note,
+        isLive: false,
+        tags: ['React', 'Bootstrap', 'CSS3', 'Node.js', 'Express', 'MySQL', 'Vite'],
+        cover: circularSlides[0],
+        links: [
+            { type: 'gallery', action: () => openModal(circularSlides), label: t.gallery_btn }
+        ],
+    },
+    {
+        title: 'Gameroom Library',
+        desc: t.proj_data_7,
+        badge: '🟢 Live Demo',
+        isLive: true,
+        tags: ['React', 'TypeScript', 'Three.js', 'React Three Fiber', 'Supabase', 'PostgreSQL', 'Vercel'],
+        cover: gameroomSlides[0],
+        links: [
+            { type: 'app', url: 'https://gameroom-library.vercel.app' },
+            { type: 'gallery', action: () => openModal(gameroomSlides), label: t.gallery_btn },
+            { type: 'github', url: 'https://github.com/LoliMG/Gameroom-Library' }
+        ],
     },
     {
         title: 'GoodHabits',
@@ -38,52 +56,11 @@ export const getProjectsData = (t, openModal) => [
         badge: '⚡ Fullstack App',
         isLive: false,
         tags: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Vercel'],
-        cover: '/assets/GoodHabit/gh1.png',
+        cover: goodHabitSlides[0],
         links: [
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/GoodHabit/gh1.png',
-                    '/assets/GoodHabit/gh2.png',
-                    '/assets/GoodHabit/gh3.png',
-                    '/assets/GoodHabit/gh4.png'
-                ]),
-                label: t.gallery_btn
-            },
+            { type: 'gallery', action: () => openModal(goodHabitSlides), label: t.gallery_btn },
             { type: 'github', url: 'https://github.com/LoliMG/GoodHabit' }
         ],
-        slides: [
-            '/assets/GoodHabit/gh1.png',
-            '/assets/GoodHabit/gh2.png',
-            '/assets/GoodHabit/gh3.png',
-            '/assets/GoodHabit/gh4.png'
-        ]
-    },
-    {
-        title: 'CircularScore',
-        desc: t.proj_data_2,
-        badge: '🌱 Fullstack App',
-        isLive: false,
-        tags: ['React', 'Bootstrap', 'CSS3', 'Node.js', 'Express', 'MySQL', 'Vite'],
-        cover: '/assets/CircularScore/cs1.png',
-        links: [
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/CircularScore/cs1.png',
-                    '/assets/CircularScore/cs2.png',
-                    '/assets/CircularScore/cs3.png',
-                    '/assets/CircularScore/cs4.png'
-                ]),
-                label: t.gallery_btn
-            }
-        ],
-        slides: [
-            '/assets/CircularScore/cs1.png',
-            '/assets/CircularScore/cs2.png',
-            '/assets/CircularScore/cs3.png',
-            '/assets/CircularScore/cs4.png'
-        ]
     },
     {
         title: 'BookFly',
@@ -91,26 +68,11 @@ export const getProjectsData = (t, openModal) => [
         badge: '📚 Fullstack App',
         isLive: false,
         tags: ['React', 'Vite', 'Bootstrap', 'CSS3', 'Node.js', 'MySQL'],
-        cover: '/assets/BookFly/bf1.png',
+        cover: bookFlySlides[0],
         links: [
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/BookFly/bf1.png',
-                    '/assets/BookFly/bf2.png',
-                    '/assets/BookFly/bf3.png',
-                    '/assets/BookFly/bf4.png'
-                ]),
-                label: t.gallery_btn
-            },
+            { type: 'gallery', action: () => openModal(bookFlySlides), label: t.gallery_btn },
             { type: 'github', url: 'https://github.com/LoliMG/LibraryProject' }
         ],
-        slides: [
-            '/assets/BookFly/bf1.png',
-            '/assets/BookFly/bf2.png',
-            '/assets/BookFly/bf3.png',
-            '/assets/BookFly/bf4.png'
-        ]
     },
     {
         title: 'Matatena',
@@ -118,36 +80,11 @@ export const getProjectsData = (t, openModal) => [
         badge: '🟢 Live Demo',
         isLive: true,
         tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
-        cover: '/assets/Matatena/matatena1.png',
+        cover: matatenaSlides[0],
         links: [
             { type: 'app', url: 'https://matatena-eight.vercel.app/' },
-            {
-                type: 'gallery',
-                action: () => openModal([
-                    '/assets/Matatena/matatena1.png',
-                    '/assets/Matatena/matatena2.png',
-                    '/assets/Matatena/matatena3.png'
-                ]),
-                label: t.gallery_btn
-            },
+            { type: 'gallery', action: () => openModal(matatenaSlides), label: t.gallery_btn },
             { type: 'github', url: 'https://github.com/LoliMG/matatena' }
         ],
-        slides: [
-            '/assets/Matatena/matatena1.png',
-            '/assets/Matatena/matatena2.png',
-            '/assets/Matatena/matatena3.png'
-        ]
-    },
-    {
-        title: 'Portfolio',
-        desc: t.proj_data_4,
-        badge: '✨ SPA Portfolio',
-        isLive: false,
-        tags: ['React', 'JavaScript', 'CSS3', 'Vite'],
-        cover: '/assets/hero.png',
-        links: [
-            { type: 'github', url: 'https://github.com/LoliMG/portfolio' }
-        ],
-        slides: []
     }
 ];

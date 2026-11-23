@@ -115,6 +115,14 @@
                 }
             }
 
+            p.project-note {
+                flex: none;
+                min-height: 0;
+                font-size: 0.8rem;
+                color: var(--text-secondary);
+                margin-bottom: 0.75rem;
+            }
+
             .project-links {
                 display: flex;
                 flex-direction: row;

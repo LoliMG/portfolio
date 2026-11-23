@@ -12,12 +12,12 @@ const NotFoundError = () => {
             <div className="container">
                 <GlassCard className="error-card" variant="zoom">
                     <h1 className="error-code">404</h1>
-                    <h2 className="error-title">{t.error_title || 'Ups! Página no encontrada'}</h2>
+                    <h2 className="error-title">{t.error_title}</h2>
                     <p className="error-text">
-                        {t.error_p || 'Parece que el enlace que buscas no existe o ha sido movido.'}
+                        {t.error_p}
                     </p>
                     <Link to="/" className="btn primary-btn error-btn">
-                        {t.nav_home || 'Volver al Inicio'}
+                        {t.nav_home}
                     </Link>
                 </GlassCard>
             </div>

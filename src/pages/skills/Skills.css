@@ -226,14 +226,14 @@
 :root[data-theme='light'] {
     .bento-skill-card {
         .bento-badge {
-            background: rgba(0, 151, 167, 0.08);
+            background: var(--accent-soft);
             color: var(--accent-color);
-            border-color: rgba(0, 151, 167, 0.2);
+            border-color: var(--glass-border);
         }
 
         .skill-chip {
             background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(0, 151, 167, 0.15);
+            border-color: var(--glass-border);
 
             &:hover {
                 background: #ffffff;
@@ -248,7 +248,7 @@
 
         .skill-chip-lang {
             background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(0, 151, 167, 0.15);
+            border-color: var(--glass-border);
 
             &:hover {
                 background: #ffffff;

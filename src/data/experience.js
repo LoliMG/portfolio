@@ -5,12 +5,11 @@
 
 export const getExperienceData = (t) => [
     { 
-        date: '4/2026 - actual', 
-        title: 'Fullstack Web Developer - Freelance', 
-        company: 'Freelance', 
+        date: '5/2026 - actual',
+        title: 'Fullstack Web Developer',
+        company: 'Freelance',
         projects: [
-            { date: '5/2026 - 7/2026', desc: t.exp_p_0 },
-            { date: '4/2026', desc: t.exp_p_1 }
+            { date: '5/2026 - 7/2026', desc: t.exp_p_0 }
         ]
     },
     { date: '9/2025 - 2/2026', title: 'Fullstack Web Developer', company: 'Circular Score', desc: t.exp_p_2 },

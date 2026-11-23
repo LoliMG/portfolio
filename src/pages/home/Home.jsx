@@ -7,27 +7,16 @@ import Education from '../education/Education';
 import Skills from '../skills/Skills';
 import './Home.css';
 
+// .section-block has scroll-margin-top for the fixed navbar
+const scrollToSection = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
 const Home = ({ autoScrollTo }) => {
     const { t } = useLanguage();
     const [toastMessage, setToastMessage] = useState(null);
 
     useEffect(() => {
         if (autoScrollTo) {
-            const target = document.getElementById(autoScrollTo);
-            if (target) {
-                setTimeout(() => {
-                    const offset = 80;
-                    const bodyRect = document.body.getBoundingClientRect().top;
-                    const elementRect = target.getBoundingClientRect().top;
-                    const elementPosition = elementRect - bodyRect;
-                    const offsetPosition = elementPosition - offset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }, 100);
-            }
+            setTimeout(() => scrollToSection(autoScrollTo), 100);
         }
     }, [autoScrollTo]);
 
@@ -50,22 +39,6 @@ const Home = ({ autoScrollTo }) => {
         return () => observer.disconnect();
     }, []);
 
-    const scrollToSection = (id) => {
-        const target = document.getElementById(id);
-        if (!target) return;
-
-        const offset = 80;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = target.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    };
-
     const handleCopyEmail = (email) => {
         navigator.clipboard.writeText(email);
         setToastMessage(t.email_copied);
@@ -76,7 +49,8 @@ const Home = ({ autoScrollTo }) => {
 
     const renderCascadingText = (text, startIndex = 0) => {
         let currentIdx = startIndex;
-        return text.split(' ').map((word, wordIdx, arr) => {
+        // Screen readers get the plain text; the per-letter spans are visual only.
+        const letters = text.split(' ').map((word, wordIdx, arr) => {
             const wordChars = word.split('').map((char, charIdx) => (
                 <span 
                     key={charIdx} 
@@ -103,6 +77,12 @@ const Home = ({ autoScrollTo }) => {
                 </span>
             );
         });
+        return (
+            <>
+                <span className="sr-only">{text}</span>
+                <span aria-hidden="true">{letters}</span>
+            </>
+        );
     };
 
     const techLogos = [
@@ -138,12 +118,12 @@ const Home = ({ autoScrollTo }) => {
                         <span>{t.status_available}</span>
                     </div>
 
-                    <h2 className="cascade-container">
+                    <p className="cascade-container hero-greeting">
                         {renderCascadingText(t.hero_hi)}
                         <span className="accent">
                             {renderCascadingText(heroName, t.hero_hi.length)}
                         </span>
-                    </h2>
+                    </p>
                     <h1 className="cascade-container">
                         {renderCascadingText(heroRole, t.hero_hi.length + heroName.length)}
                     </h1>
@@ -163,7 +143,7 @@ const Home = ({ autoScrollTo }) => {
                             href={t.cv_file} 
                             download 
                             className="btn cv-btn" 
-                            title="Descargar Curriculum Vitae"
+                            title={t.btn_cv}
                         >
                             <i className="fas fa-file-download"></i> {t.btn_cv}
                         </a>
@@ -228,7 +208,7 @@ const Home = ({ autoScrollTo }) => {
                     <h2 className="section-title">{t.about_title}</h2>
                     <div className="about-grid">
                         <div className="about-image">
-                            <img src="/assets/avatar.jpeg" alt="Loli Mariscal" />
+                            <img src="/assets/avatar.webp" alt="Loli Mariscal" />
                         </div>
                         <div className="about-text">
                             <p>{t.about_p1}</p>
@@ -262,6 +242,7 @@ const Home = ({ autoScrollTo }) => {
                                             {isEmail && (
                                                 <button 
                                                     className="copy-icon-btn"
+                                                    aria-label={t.btn_copy_email}
                                                     onClick={() => handleCopyEmail(emailAddress)}
                                                     title={t.btn_copy_email}
                                                 >

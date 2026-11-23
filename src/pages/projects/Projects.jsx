@@ -16,7 +16,7 @@ const ProjectCard = ({ proj }) => {
                             {proj.badge}
                         </span>
                     )}
-                    <img src={proj.cover} alt={proj.title} />
+                    <img src={proj.cover} alt={proj.title} loading="lazy" />
                 </div>
             )}
             <div className="project-info">
@@ -27,6 +27,9 @@ const ProjectCard = ({ proj }) => {
                 <div className="tags">
                     {proj.tags.map((tag, j) => <span key={j}>{tag}</span>)}
                 </div>
+                {proj.note && (
+                    <p className="project-note"><i className="fas fa-lock" aria-hidden="true"></i> {proj.note}</p>
+                )}
                 <div className="project-links">
                     {proj.links.map((link, k) => (
                         <ProjectButton
@@ -51,13 +54,11 @@ const Projects = () => {
     const openModal = (projectSlides) => {
         setModalSlides(projectSlides);
         setIsModalOpen(true);
-        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
         setModalSlides([]);
-        document.body.style.overflow = 'auto';
     };
 
     const projects = getProjectsData(t, openModal);
@@ -74,6 +75,7 @@ const Projects = () => {
             </div>
 
             <GalleryModal
+                key={modalSlides[0] ?? 'closed'}
                 isOpen={isModalOpen}
                 closeModal={closeModal}
                 slides={modalSlides}

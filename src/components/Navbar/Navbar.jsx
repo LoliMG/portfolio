@@ -64,7 +64,7 @@ const Navbar = () => {
             window.removeEventListener('scroll', onScroll);
             document.body.style.overflow = 'unset';
         };
-    }, [isMenuOpen, navLinks]);
+    }, [isMenuOpen]);
 
     const scrollToSection = (id) => {
         setIsMenuOpen(false);
@@ -72,19 +72,8 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
-        const target = document.getElementById(id);
-        if (target) {
-            const offset = 80;
-            const bodyRect = document.body.getBoundingClientRect().top;
-            const elementRect = target.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+        // .section-block has scroll-margin-top for the fixed navbar
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
@@ -114,7 +103,7 @@ const Navbar = () => {
                         </li>
                     ))}
                     <li className="nav-actions">
-                        <button className="theme-toggle" onClick={toggleTheme} title="Toggle Theme">
+                        <button className="theme-toggle" onClick={toggleTheme} title={t.aria_theme} aria-label={t.aria_theme}>
                             <i className={`fas ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
                         </button>
                         <button className="lang-toggle" onClick={toggleLang}>
@@ -124,11 +113,17 @@ const Navbar = () => {
                     </li>
                 </ul>
 
-                <div className={`burger ${isMenuOpen ? 'toggle' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <button
+                    type="button"
+                    className={`burger ${isMenuOpen ? 'toggle' : ''}`}
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label={t.aria_menu}
+                    aria-expanded={isMenuOpen}
+                >
                     <div className="line1"></div>
                     <div className="line2"></div>
                     <div className="line3"></div>
-                </div>
+                </button>
             </div>
         </nav>
     );
